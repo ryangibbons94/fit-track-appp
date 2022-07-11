@@ -37,6 +37,7 @@ weightRouter.post("/", async (request, response, next) => {
   const weight = new Weight({
     weight: body.weight,
     date: date.toLocaleString(),
+    notes: body.notes,
     user: user._id,
   });
   const savedWeightLog = await weight.save();
@@ -72,6 +73,8 @@ weightRouter.put("/:id", (request, response, next) => {
   const weight = {
     weight: body.weight,
     date: body.date,
+    notes: body.notes,
+    user: request.user._id,
   };
 
   Weight.findByIdAndUpdate(request.params.id, weight, { new: true })
