@@ -77,7 +77,7 @@ weightRouter.put("/:id", (request, response, next) => {
     weight: body.weight,
     date: body.date,
     notes: body.notes,
-    user: request.user._id,
+    user: body.user.id,
   };
 
   Weight.findByIdAndUpdate(request.params.id, weight, { new: true })
