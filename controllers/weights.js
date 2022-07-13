@@ -33,10 +33,13 @@ weightRouter.post("/", async (request, response, next) => {
     return response.status(401).json({ error: "token is missing or invalid" });
   }
 
-  const date = new Date();
+  let date = new Date();
+  date = date.toLocaleString("en-US", {
+    timeZone: "America/New_York",
+  });
   const weight = new Weight({
     weight: body.weight,
-    date: date.toLocaleString(),
+    date: date,
     notes: body.notes,
     user: user._id,
   });
@@ -74,7 +77,7 @@ weightRouter.put("/:id", (request, response, next) => {
     weight: body.weight,
     date: body.date,
     notes: body.notes,
-    user: request.user._id,
+    user: body.user.id,
   };
 
   Weight.findByIdAndUpdate(request.params.id, weight, { new: true })
