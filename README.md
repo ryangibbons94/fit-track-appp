@@ -7,7 +7,7 @@ A full stack web application that allows users to create and account and save a 
 
 ## How It's Made:
 
-**Tech used:** React, MongoDB, Express, Node.js
+**Tech used:** React, MongoDB, Mongoose, Express, Node.js
 
 ## Optimizations
 I plan on making the following addition:
