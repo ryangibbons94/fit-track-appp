@@ -15,6 +15,8 @@ I plan on making the following addition:
 
 2. Extending the app to allow users to track their workouts as well and see the progress on their exercises over time.
 
+3. My real push goal is to add something that looks like the GitHub contributions graph and have it track a users workouts.
+
 ## Challenges Faced/Lessons Learned:
 
 
